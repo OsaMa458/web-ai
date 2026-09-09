@@ -1,4 +1,3 @@
-```tsx
 import React, { useState } from 'react';
 import { UserCheck, ShieldCheck } from 'lucide-react';
 
@@ -15,12 +14,10 @@ export const SpecialistPhoto: React.FC<SpecialistPhotoProps> = ({
   containerClassName = '',
   altText = 'Usama, Walmart and TikTok Shop e-commerce specialist',
 }) => {
-  // Images are stored directly inside the public folder.
-  // BASE_URL automatically handles GitHub Pages (/web-ai/).
-const imageSrc =
-  type === 'hero'
-    ? `${import.meta.env.BASE_URL}DESKTOP.png`
-    ? `${import.meta.env.BASE_URL}usama-profile.png`;
+  const imageSrc =
+    type === 'hero'
+      ? '/web-ai/DESKTOP.png'
+      : '/web-ai/usama-profile.png';
 
   const [hasFailed, setHasFailed] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -79,4 +76,3 @@ const imageSrc =
     </div>
   );
 };
-```

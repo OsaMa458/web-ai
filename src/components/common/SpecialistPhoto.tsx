@@ -16,8 +16,8 @@ export const SpecialistPhoto: React.FC<SpecialistPhotoProps> = ({
 }) => {
   const imageSrc =
     type === 'hero'
-      ? '/web-ai/public/DESKTOP.png'
-      : '/web-ai/public/usama-profile.png';
+      ? '/web-ai/DESKTOP.png'
+      : '/web-ai/usama-profile.png';
 
   const [hasFailed, setHasFailed] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);

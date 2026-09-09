@@ -17,10 +17,10 @@ export const SpecialistPhoto: React.FC<SpecialistPhotoProps> = ({
 }) => {
   // Images are stored directly inside the public folder.
   // BASE_URL automatically handles GitHub Pages (/web-ai/).
-  const imageSrc =
-    type === 'hero'
-      ? `${import.meta.env.BASE_URL}DESKTOP.png`
-      : `${import.meta.env.BASE_URL}usama-profile.png`;
+ const imageSrc =
+  type === 'hero'
+    ? `${import.meta.env.BASE_URL}DESKTOP.png`
+    : `${import.meta.env.BASE_URL}usama-profile.png`;
 
   const [hasFailed, setHasFailed] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);

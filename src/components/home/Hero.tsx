@@ -1,4 +1,3 @@
-```tsx
 import React from 'react';
 import {
   ArrowRight,
@@ -7,186 +6,172 @@ import {
   Sparkles,
   BarChart3,
 } from 'lucide-react';
-import { siteConfig } from '../../config/siteConfig';
 import { SpecialistPhoto } from '../common/SpecialistPhoto';
 
 interface HeroProps {
   onOpenAuditModal: () => void;
   onBookCall: () => void;
+  onNavigateToPortfolio: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onOpenAuditModal,
   onBookCall,
+  onNavigateToPortfolio,
 }) => {
   return (
     <section
-      id="hero-section"
-      className="relative pt-32 sm:pt-36 pb-16 lg:pb-24 overflow-hidden bg-[#111315]"
+      id="hero"
+      className="relative overflow-hidden bg-[#111315] border-b border-[#2B3036]"
     >
-      {/* NexStudio subtle background grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(#2B3036_1px,transparent_1px)] [background-size:24px_24px] opacity-35 pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
+          {/* Left Content */}
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#181B1F] border border-[#2B3036] text-[#A7ADB4] text-xs font-semibold mb-6">
+              <Sparkles className="w-3.5 h-3.5 text-[#6B8AFD]" />
+              Walmart & TikTok Shop E-commerce Specialist
+            </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
-
-          {/* Left Column */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-
-            {/* Specialization Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#181B1F] text-[#6B8AFD] border border-[#2B3036] shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#6B8AFD] animate-pulse" />
-              <span className="tracking-wide">
-                Walmart & TikTok Shop Specialist
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#F5F5F2] leading-[1.05]">
+              Build, Optimize & Manage
+              <span className="block text-[#6B8AFD] mt-2">
+                Your E-commerce Store
               </span>
-            </div>
+            </h1>
 
-            {/* Headline */}
-            <div className="space-y-2">
-              <h1
-                id="hero-h1-positioning"
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#F5F5F2] tracking-tight leading-[1.08]"
-              >
-                Walmart & TikTok Shop{' '}
-                <br className="hidden sm:inline" />
-                <span>E-commerce Specialist</span>
-              </h1>
-            </div>
-
-            {/* Supporting Service Line */}
-            <p className="text-sm sm:text-base font-medium text-[#6B8AFD] tracking-wide">
-              {siteConfig.supportingLine}
+            <p className="mt-6 text-base sm:text-lg leading-8 text-[#A7ADB4] max-w-xl">
+              I help e-commerce brands and store owners set up, manage,
+              optimize, and grow their Walmart and TikTok Shop operations —
+              from store setup and product research to listings, sourcing,
+              audits, and creative assets.
             </p>
 
-            {/* Description */}
-            <p className="text-[#A7ADB4] text-sm sm:text-base leading-relaxed max-w-2xl">
-              Helping US, UK, European, and worldwide e-commerce brands
-              research, build, optimize, and manage their Walmart Marketplace
-              and TikTok Shop presence with data-grounded execution.
-            </p>
+            {/* Capability Points */}
+            <div className="mt-8 grid sm:grid-cols-2 gap-3">
+              <div className="flex items-center gap-2 text-sm text-[#F5F5F2]">
+                <CheckCircle className="w-4 h-4 text-[#6B8AFD] shrink-0" />
+                Walmart Store Setup & Management
+              </div>
 
-            {/* CTA Group */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              <div className="flex items-center gap-2 text-sm text-[#F5F5F2]">
+                <CheckCircle className="w-4 h-4 text-[#6B8AFD] shrink-0" />
+                TikTok Shop Setup & Management
+              </div>
 
+              <div className="flex items-center gap-2 text-sm text-[#F5F5F2]">
+                <CheckCircle className="w-4 h-4 text-[#6B8AFD] shrink-0" />
+                Product Research & Sourcing
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-[#F5F5F2]">
+                <CheckCircle className="w-4 h-4 text-[#6B8AFD] shrink-0" />
+                Listing Optimization & Audits
+              </div>
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-9 flex flex-col sm:flex-row gap-3">
               <button
+                type="button"
                 onClick={onOpenAuditModal}
                 id="hero-primary-audit-cta"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm bg-[#6B8AFD] hover:bg-[#5A78EB] text-[#111315] shadow-sm active:scale-[0.98] transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#6B8AFD] text-white font-bold text-sm hover:brightness-110 transition-all duration-200 shadow-lg"
               >
-                <span>Get a Free Store Audit</span>
-                <ArrowRight className="w-4 h-4 stroke-[2.5]" />
+                <ShieldCheck className="w-4 h-4" />
+                Get a Free Store Audit
               </button>
 
               <button
+                type="button"
                 onClick={onBookCall}
-                id="hero-secondary-view-work-cta"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-medium text-sm text-[#F5F5F2] hover:bg-[#252A30] bg-[#181B1F] border border-[#2B3036] transition-all cursor-pointer"
+                id="hero-secondary-book-call-cta"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#181B1F] border border-[#2B3036] text-[#F5F5F2] font-bold text-sm hover:bg-[#20242A] transition-all duration-200"
               >
-                <span>Contact / Book a Call</span>
-                <ArrowRight className="w-4 h-4 text-[#6B8AFD]" />
+                Book a Call
+                <ArrowRight className="w-4 h-4" />
               </button>
-
             </div>
 
-            {/* Audience / Specialist Positioning */}
-            <div className="pt-3 flex flex-wrap items-center gap-y-2 gap-x-5 text-xs text-[#A7ADB4]">
-              <span className="flex items-center gap-1.5 font-medium text-[#F5F5F2]">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>{siteConfig.contact.targetRegions}</span>
-              </span>
-
-              <span className="hidden sm:inline text-[#2B3036]">
-                •
-              </span>
-
-              <span>
-                Direct 1-on-1 specialist communication • No agency middleman
-              </span>
+            {/* Trust / Positioning */}
+            <div className="mt-8 flex items-center gap-2 text-xs text-[#A7ADB4]">
+              <ShieldCheck className="w-4 h-4 text-[#6B8AFD]" />
+              Practical e-commerce execution focused on store performance
             </div>
-
           </div>
 
-          {/* Right Column */}
-          <div className="lg:col-span-5 space-y-4">
+          {/* Right Visual */}
+          <div className="relative">
+            <div
+              id="hero-specialist-card"
+              className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-[#181B1F] border border-[#2B3036] shadow-2xl"
+            >
+              <SpecialistPhoto
+                type="hero"
+                altText="Usama, Walmart and TikTok Shop e-commerce specialist"
+                className="w-full h-full object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]"
+              />
 
-            <div className="rounded-2xl bg-[#20242A] border border-[#2B3036] p-3.5 shadow-xl space-y-3.5 relative overflow-hidden group hover:border-[#6B8AFD]/40 transition-all duration-300">
+              {/* Bottom Overlay */}
+              <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6 bg-gradient-to-t from-[#111315] via-[#111315]/80 to-transparent">
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs font-semibold text-[#A7ADB4] mb-1">
+                      E-commerce Specialist
+                    </p>
 
-              {/* Authentic Photo Container */}
-              <div className="relative aspect-[16/10] rounded-xl overflow-hidden bg-[#181B1F] border border-[#2B3036]">
+                    <h2 className="text-xl sm:text-2xl font-bold text-[#F5F5F2]">
+                      Usama
+                    </h2>
 
-                <SpecialistPhoto
-                  type="hero"
-                  altText="Usama, Walmart and TikTok Shop e-commerce specialist"
-                  className="group-hover:scale-[1.02] transition-transform duration-500 w-full h-full object-contain object-center"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111315]/80 via-transparent to-transparent pointer-events-none" />
-
-                {/* Overlay Badge */}
-                <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs">
-
-                  <div className="bg-[#181B1F]/90 px-3 py-1 rounded-md border border-[#2B3036] text-[#F5F5F2] font-semibold text-[11px]">
-                    <span>USAMA · Specialist Operations</span>
+                    <p className="text-xs sm:text-sm text-[#A7ADB4] mt-1">
+                      Walmart • TikTok Shop • E-commerce Operations
+                    </p>
                   </div>
 
-                  <div className="bg-[#6B8AFD]/20 px-2.5 py-1 rounded-md border border-[#6B8AFD]/40 text-[#6B8AFD] text-[11px] font-medium">
-                    Direct Operator
+                  <div className="hidden sm:flex items-center justify-center w-11 h-11 rounded-xl bg-[#181B1F]/90 border border-[#2B3036]">
+                    <BarChart3 className="w-5 h-5 text-[#6B8AFD]" />
                   </div>
-
                 </div>
               </div>
-
-              {/* Listing Quality Diagnostic */}
-              <div className="p-3.5 rounded-xl bg-[#181B1F] border border-[#2B3036] space-y-2.5">
-
-                <div className="flex items-center justify-between text-xs">
-
-                  <span className="text-[#F5F5F2] font-medium flex items-center gap-1.5">
-                    <BarChart3 className="w-3.5 h-3.5 text-[#6B8AFD]" />
-                    <span>Target Listing Quality Score (LQS)</span>
-                  </span>
-
-                  <span className="font-semibold text-emerald-400 font-mono">
-                    94% Target
-                  </span>
-
-                </div>
-
-                <div className="w-full bg-[#111315] h-2 rounded-full overflow-hidden border border-[#2B3036]">
-                  <div className="bg-[#6B8AFD] h-full rounded-full w-[94%]" />
-                </div>
-
-                <div className="grid grid-cols-2 gap-2 pt-1">
-
-                  <div className="text-[11px] text-[#A7ADB4] flex items-center gap-1.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span>Walmart Seller Center</span>
-                  </div>
-
-                  <div className="text-[11px] text-[#A7ADB4] flex items-center gap-1.5">
-                    <CheckCircle className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span>TikTok Shop US & UK</span>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Free Audit Button */}
-              <button
-                onClick={onOpenAuditModal}
-                className="w-full py-2.5 px-3 rounded-xl text-xs font-semibold text-[#111315] bg-[#6B8AFD] hover:bg-[#5A78EB] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <Sparkles className="w-3.5 h-3.5 stroke-[2.5]" />
-                <span>Request a Free Manual Store Audit</span>
-              </button>
-
             </div>
 
+            {/* Floating Portfolio CTA */}
+            <button
+              type="button"
+              onClick={onNavigateToPortfolio}
+              id="hero-secondary-view-work-cta"
+              className="absolute -bottom-5 left-5 sm:left-8 inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-[#20242A] border border-[#2B3036] text-[#F5F5F2] text-sm font-bold shadow-xl hover:bg-[#252A30] transition-all duration-200"
+            >
+              <span>View My Work</span>
+              <ArrowRight className="w-4 h-4 text-[#6B8AFD]" />
+            </button>
+          </div>
+        </div>
+
+        {/* Bottom Audit CTA */}
+        <div className="mt-20 pt-8 border-t border-[#2B3036] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+          <div>
+            <h3 className="text-lg font-bold text-[#F5F5F2]">
+              Want to know what is holding your store back?
+            </h3>
+
+            <p className="text-sm text-[#A7ADB4] mt-1">
+              Get a practical manual store audit focused on actionable issues.
+            </p>
           </div>
 
+          <button
+            type="button"
+            onClick={onOpenAuditModal}
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#181B1F] border border-[#2B3036] text-[#F5F5F2] text-sm font-bold hover:bg-[#20242A] transition-all duration-200"
+          >
+            <ShieldCheck className="w-4 h-4 text-[#6B8AFD]" />
+            Request a Free Manual Store Audit
+          </button>
         </div>
       </div>
     </section>
   );
 };
-```

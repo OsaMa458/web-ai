@@ -86,7 +86,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAuditModal, onViewWork }) => {
                 <SpecialistPhoto
                   type="hero"
                   altText="Usama, Walmart and TikTok Shop e-commerce specialist"
-                  className="group-hover:scale-[1.02] transition-transform duration-500 w-full h-full object-cover object-center"
+                  className="group-hover:scale-[1.02] transition-transform duration-500 w-full h-full object-contain object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111315]/80 via-transparent to-transparent pointer-events-none" />
                 

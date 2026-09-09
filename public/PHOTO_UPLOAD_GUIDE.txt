@@ -1,0 +1,11 @@
+PLACE YOUR 2 AUTHENTIC PHOTOS HERE:
+
+1. Hero Desk Photo (16:9):
+   - Name: usama-hero.png (or keep DESKTOP.png)
+   - Used on: Homepage Hero Card
+
+2. Portrait Headshot (Square or 4:5):
+   - Name: usama-profile.png (or keep ChatGPT Image Sep 9, 2026, 02_58_54 AM.png)
+   - Used on: About Page & Contact Page
+
+Once dropped into this /public folder, they will immediately display live across the entire website!

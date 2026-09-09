@@ -5,10 +5,10 @@ import { SpecialistPhoto } from '../common/SpecialistPhoto';
 
 interface HeroProps {
   onOpenAuditModal: () => void;
-  onViewWork: () => void;
+  onBookCall: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onOpenAuditModal, onViewWork }) => {
+export const Hero: React.FC<HeroProps> = ({ onOpenAuditModal, onBookCall }) => {
   return (
     <section id="hero-section" className="relative pt-32 sm:pt-36 pb-16 lg:pb-24 overflow-hidden bg-[#111315]">
       {/* NexStudio subtle background grid */}
@@ -129,7 +129,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenAuditModal, onViewWork }) => {
 
               {/* Free Audit Button */}
               <button
-                onClick={onOpenAuditModal}
+                onClick={onBookCall}
                 className="w-full py-2.5 px-3 rounded-xl text-xs font-semibold text-[#111315] bg-[#6B8AFD] hover:bg-[#5A78EB] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
               >
                 <Sparkles className="w-3.5 h-3.5 stroke-[2.5]" />
